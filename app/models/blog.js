@@ -3,7 +3,16 @@
 const mongoose = require('mongoose');
 
 const blogSchema = new mongoose.Schema({
-  text: {
+  //form fields for blog display
+  title: {
+    type: String,
+    required: true,
+  },
+  content: {
+    type: String,
+    required: true,
+  },
+  author: {
     type: String,
     required: true,
   },
@@ -24,9 +33,9 @@ const blogSchema = new mongoose.Schema({
   },
 });
 
-blogSchema.virtual('length').get(function length() {
-  return this.text.length;
-});
+// blogSchema.virtual('length').get(function length() {
+//   return this.text.length;
+// });
 
 const Blog = mongoose.model('Blog', blogSchema);
 
