@@ -9,12 +9,20 @@ const setUser = require('./concerns/set-current-user');
 const setModel = require('./concerns/set-mongoose-model');
 
 const index = (req, res, next) => {
+  if (req.user) {Blog.find({'_owner':req.user})
+    .then(blogs => res.json({
+      blogs: blogs.map((e) =>
+        e.toJSON({ virtuals: true, user: req.user })),
+    }))
+    .catch(next);
+} else {
   Blog.find()
     .then(blogs => res.json({
       blogs: blogs.map((e) =>
         e.toJSON({ virtuals: true, user: req.user })),
     }))
     .catch(next);
+}
 };
 
 const show = (req, res) => {
@@ -57,7 +65,7 @@ module.exports = controller({
   destroy,
 }, { before: [
   { method: setUser, only: ['index', 'show'] },
-  { method: authenticate, except: ['index', 'show'] },
+  { method: authenticate, except: ['index'] },
   { method: setModel(Blog), only: ['show'] },
   { method: setModel(Blog, { forUser: true }), only: ['update', 'destroy'] },
 ], });
