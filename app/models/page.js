@@ -2,22 +2,23 @@
 
 const mongoose = require('mongoose');
 
-const blogSchema = new mongoose.Schema({
-  //form fields for blog display
-  title: {
+const pageSchema = new mongoose.Schema({
+
+  header: {
     type: String,
     required: true,
   },
-  content: {
+
+  body: {
     type: String,
     required: true,
   },
-  author: {
+
+  footer: {
     type: String,
     required: true,
   },
-  // owner attaches the owner definition to each blog POST
-  // displays the user_id
+
   _owner: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
@@ -35,10 +36,10 @@ const blogSchema = new mongoose.Schema({
   },
 });
 
-// blogSchema.virtual('length').get(function length() {
+// pageSchema.virtual('length').get(function length() {
 //   return this.text.length;
 // });
 
-const Blog = mongoose.model('Blog', blogSchema);
+const Page = mongoose.model('Page', pageSchema);
 
-module.exports = Blog;
+module.exports = Page;
