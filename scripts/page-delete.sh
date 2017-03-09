@@ -1,11 +1,11 @@
 #!/bin/bash
 
 API="http://localhost:4741"
-URL_PATH="/blogs"
+URL_PATH="/pages"
 
-curl "${API}${URL_PATH}" \
+curl "${API}${URL_PATH}/${ID}" \
   --include \
-  --request GET \
+  --request DELETE \
   --header "Authorization: Token token=${TOKEN}"
 
 echo
