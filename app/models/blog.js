@@ -16,6 +16,10 @@ const blogSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  isPrivate: {
+    type: String,
+    required: true,
+  },
   // owner attaches the owner definition to each blog POST
   // displays the user_id
   _owner: {

@@ -16,7 +16,7 @@ const index = (req, res, next) => {
     }))
     .catch(next);
 } else {
-  Blog.find()
+  Blog.find({'isPrivate':"unchecked"})
     .then(blogs => res.json({
       blogs: blogs.map((e) =>
         e.toJSON({ virtuals: true, user: req.user })),
