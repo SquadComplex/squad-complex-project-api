@@ -1,5 +1,5 @@
 
-## Random Bytes
+# Random Bytes
 
     We were tasked with creating an app that build websites.  Random Bytes is for non-technical users to write blog posts and pages for the site. When the visitor visits Random Bytes    , they can see public content. When a user logs in, they should see a dashboard that lets them create and edit new posts or pages and decide on if they want them to be public or private.
 
