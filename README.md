@@ -9,18 +9,19 @@ This is a link to our deployed Back-end: https://guarded-mountain-32914.herokuap
 
 ## Routes
 
-Verb	URI Pattern	Controller#Action
-POST	/sign-up	users#signup
-POST	/sign-in	users#signin
-PATCH	/change-password/:id	users#changepw
-DELETE	/sign-out/:id	users#signout
-POST	/blogs	blog-create#create
-GET	/blogs	blog-egt-index#index
-GET	/blogs	blog-get-show#show
-PATCH	/blogs	blog-update#update
-DELETE	/blogs	blog-delete#destroy
-POST	/pages	page-create#create
-GET	/pages	page-get-index#index
-GET	/pages	page-get-show#show
-PATCH	/pages	page-update#update
-DELETE	/pages	page-delete#destroy
+Verb |	URI Pattern |	Controller#Action
+--- | --- | ---
+POST |	/sign-up |	users#signup
+POST |	/sign-in |	users#signin
+PATCH |	/change-password/:id |	users#changepw
+DELETE |	/sign-out/:id |	users#signout
+POST |	/blogs |	blog-create#create
+GET |	/blogs |	blog-egt-index#index
+GET |	/blogs |	blog-get-show#show
+PATCH |	/blogs |	blog-update#update
+DELETE |	/blogs |	blog-delete#destroy
+POST |	/pages |	page-create#create
+GET |	/pages |	page-get-index#index
+GET |	/pages |	page-get-show#show
+PATCH |	/pages |	page-update#update
+DELETE |	/pages |	page-delete#destroy
